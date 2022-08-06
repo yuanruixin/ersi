@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#ccus{
+    margin: 0 auto;
+    width: 100%;
+    height:50vh;
+    /* background-color: aqua; */
+}
+#line{
+    margin: 0 auto;
+    width: 100%;
+    height:50vh;
+}
