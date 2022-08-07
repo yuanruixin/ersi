@@ -1,0 +1,51 @@
+{
+  "id": "3572739",
+  "name": "双碳",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "3865243",
+      "name": "烟囱",
+      "font_class": "yancong",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "5739589",
+      "name": "自然-4",
+      "font_class": "ziran-",
+      "unicode": "eec0",
+      "unicode_decimal": 61120
+    },
+    {
+      "icon_id": "8206814",
+      "name": "能源企业",
+      "font_class": "nyqy",
+      "unicode": "e769",
+      "unicode_decimal": 59241
+    },
+    {
+      "icon_id": "11756556",
+      "name": "科技",
+      "font_class": "V",
+      "unicode": "e734",
+      "unicode_decimal": 59188
+    },
+    {
+      "icon_id": "27554894",
+      "name": "新能源",
+      "font_class": "xinnengyuan",
+      "unicode": "e731",
+      "unicode_decimal": 59185
+    },
+    {
+      "icon_id": "28606933",
+      "name": "二氧化碳",
+      "font_class": "eryanghuatan",
+      "unicode": "e6bd",
+      "unicode_decimal": 59069
+    }
+  ]
+}

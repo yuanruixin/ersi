@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <link href="css/Datacages_Homeindex.css" rel="stylesheet" type="text/css">
+    <link href="css/ProgressBarWars.css" rel="stylesheet">
+    <link rel="stylesheet" href="./font/iconfont.css">
+
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .loadEffect {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            margin: 0 auto;
+            top: 26%;
+        }
+
+        .loadEffect span {
+            animation: load 1.04s ease infinite;
+            display: inline-block;
+            width: 30px;
+            height: 10px;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            background: lightgreen;
+            position: absolute;
+        }
+
+        .loadEffect span:nth-child(1) {
+            left: 0;
+            top: 50%;
+            margin-top: -5px;
+            animation-delay: 0.13s;
+        }
+
+        .loadEffect span:nth-child(2) {
+            left: 10px;
+            top: 20px;
+            transform: rotate(45deg);
+            animation-delay: 0.26s;
+        }
+
+        .loadEffect span:nth-child(3) {
+            left: 50%;
+            top: 10px;
+            margin-left: -15px;
+            transform: rotate(90deg);
+            animation-delay: 0.39s;
+        }
+
+        .loadEffect span:nth-child(4) {
+            top: 20px;
+            right: 10px;
+            transform: rotate(135deg);
+            animation-delay: 0.52s;
+        }
+
+        .loadEffect span:nth-child(5) {
+            right: 0;
+            top: 50%;
+            margin-top: -5px;
+            transform: rotate(180deg);
+            animation-delay: 0.65s;
+        }
+
+        .loadEffect span:nth-child(6) {
+            right: 10px;
+            bottom: 20px;
+            transform: rotate(225deg);
+            animation-delay: 0.78s;
+        }
+
+        .loadEffect span:nth-child(7) {
+            bottom: 10px;
+            left: 50%;
+            margin-left: -15px;
+            transform: rotate(270deg);
+            animation-delay: 0.91s;
+        }
+
+        .loadEffect span:nth-child(8) {
+            bottom: 20px;
+            left: 10px;
+            transform: rotate(315deg);
+            animation-delay: 1.04s;
+        }
+
+        @keyframes load {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.2;
+            }
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        #loading {
+            background-color: #181e20;
+            opacity: 0.5;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            z-index: 999;
+        }
+    </style>
+    <script src="js/jquery.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/ProgressBarWars.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .progress {
+            margin-top: 30px;
+        }
+
+        .down_span {
+            color: #dfdede;
+            font-size: 12px;
+            font-weight: lighter;
+        }
+
+        h3,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .scrollbox {
+            width: 268px;
+            margin: 0 auto;
+        }
+
+        #scrollDiv {
+            width: 268px;
+            height: 280px;
+            overflow: hidden;
+        }
+
+        /*这里的高度和超出隐藏是必须的*/
+        #scrollDiv ul li {
+            height: 66px;
+            width: 259px;
+            background-color: #07325e;
+            overflow: hidden;
+            margin-bottom: 4px;
+            color: #dfdede;
+            font-size: 12px;
+            padding: 0 9px 0 9px;
+            line-height: 20px;
+            position: relative;
+        }
+
+        #scrollDiv ul li span {
+            position: absolute;
+            bottom: 5px;
+            right: 16px;
+            display: block;
+            width: 68px;
+            height: 16px;
+            text-align: center;
+            color: #06f04c;
+            background-color: #a7a2d875;
+            border-radius: 3rem;
+            line-height: 18px;
+        }
+
+        .sent-div {
+            width: 98%;
+            height: 98%;
+            margin: 0 auto;
+        }
+
+        .iconfont {
+            font-size: 50px;
+            color: #00d8ff;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+    <title>中国双碳之行</title>
+    
+    <!--标题栏-->
+    <div class="Hometitlebox">
+        <li style=" color: #00e4ff;">中国行动</li>
+    </div>
+    <!--动效显示-->
+    <div class="flasheffectoutbox">
+        <div style="width: 1000px; height: 500px; position: relative">
+            <div class="line2 line"></div>
+            <div class="line3 line"></div>
+            <div class="line4 line"></div>
+            <div class="line5 line"></div>
+            <div class="line6 line"></div>
+            <!--主动效-->
+            <div class="maineffectoutbox circleeffectclass"><img class="effectposition maindataeffect"
+                    src="img/maindataeffect.png"> 
+                    
+                <div class="effectposition acrossremindeffectout" style=" width: 76px; height: 76px; margin: 9px; text-align: center; vertical-align:middle;">
+                    
+                    <i class="acrossremindeffecindex iconfont icon-eryanghuatan" ></i>  
+                    </div>
+                    <span class="stagetitle">双碳</span>
+                </div>
+            </div>
+            <!--卫星动效-->
+
+            <div class="circleeffectclass aroundfunctioneffect" style="left: 254px;top: 135px;"><img
+                    class="effectposition arounddataeffect02" src="img/aroundeffect.png">
+                <div class="effectposition acrossremindeffectout acrossremindeffectoutard">
+                    <div class="acrossremindeffectin acrossremindeffectinard"><i class="acrossremindeffecindex iconfont icon-ziran-"></i></div>
+
+                </div> </i> <span class="stagetitle stagearoundtitle">自然固碳</span>
+
+            </div>
+            <div class="circleeffectclass aroundfunctioneffect" style="left: 190px;bottom: 89px;"><img
+                    class="effectposition arounddataeffect01" src="img/aroundeffect.png">
+                <div class="effectposition acrossremindeffectout acrossremindeffectoutard">
+                    <div class="acrossremindeffectin acrossremindeffectinard">
+                        <i class="acrossremindeffecindex iconfont icon-V"></i>
+                    </div>
+                </div><span class="stagetitle stagearoundtitle">技术固碳</span>
+            </div>
+            <div class="circleeffectclass aroundfunctioneffect" style="right: 405px;bottom: 53px;"><img
+                    class="effectposition arounddataeffect02" src="img/aroundeffect.png">
+                <div class="effectposition acrossremindeffectout acrossremindeffectoutard">
+                    <div class="acrossremindeffectin acrossremindeffectinard">
+                        <i class="acrossremindeffecindex iconfont icon-nyqy"></i>
+                    </div>
+                </div><span class="stagetitle stagearoundtitle">能源结构调整</span>
+            </div>
+            <div class="circleeffectclass aroundfunctioneffect" style="right: 243px;bottom: 165px;"><img
+                    class="effectposition arounddataeffect01" src="img/aroundeffect.png">
+                <div class="effectposition acrossremindeffectout acrossremindeffectoutard">
+                    <div class="acrossremindeffectin acrossremindeffectinard"><i class="acrossremindeffecindex iconfont icon-yancong"></i></div>
+                </div><span class="stagetitle stagearoundtitle">煤电系统三改联动</span>
+            </div>
+            <div class="circleeffectclass aroundfunctioneffect" style="right: 294px;top: 79px;"><img
+                    class="effectposition arounddataeffect03" src="img/aroundeffect.png">
+                <div class="effectposition acrossremindeffectout acrossremindeffectoutard">
+                    <div class="acrossremindeffectin acrossremindeffectinard">
+                        <i class="acrossremindeffecindex iconfont icon-xinnengyuan" ></i>
+                    </div>
+                </div><span class="stagetitle stagearoundtitle">新能源探索</span>
+
+            </div>
+            <div class="circleeffectclass decarround01" style="top: 218px;left: 92px;">
+                <div class="acrossremindeffectin decarroundin01" style=" "></div>
+            </div>
+            <div class="circleeffectclass decarround01" style="top: 197px;right: 163px;">
+                <div class="acrossremindeffectin decarroundin01" style=" "></div>
+            </div>
+            <div class="circleeffectclass decarround02" style="top: 99px;right: 93px;">
+                <div class="acrossremindeffectin decarroundin02" style=" "></div>
+            </div>
+        </div>
+    </div>
+    
+    <!--侧边浮窗-->
+    <div class="fltoutbox leftbox">
+        <div style="height: 65px; padding-top: 25px;"><span class="analyzedatashowtitle">【全球可再生能源消费量】</span><li class="subtitle">来源《bp世界能源统计年鉴》2021年版</li></div>
+        <!--左上分析内容放置框-->
+        <div class="analyzemsgbgbox" style=" margin-left: 2px;">
+            <div class="sent-div" id="container1"></div>
+        </div>
+        <!--左下分析内容放置框-->
+        <div class="analyzemsgbgbox" style="margin-top: 20px; height: 350px;overflow: hidden;"><span
+                class="analyzedatashowtitle" style="line-height: 66px;margin-left: 38px">中国宣言</span>
+            <div class="scrollbox">
+                <div id="scrollDiv">
+                    <ul>
+                        <li> 在第75届联合国大会上，习近平主席庄重承诺中国力争实现2030年前实现碳达峰，2060年前实现碳中和。 <span style="">2020/9/22</span></li>
+                        <li> “十四五”期间，提出要加快推动绿色低碳发展，降低碳排放强度，支持有条件的地方率先达到碳排放峰值，制定碳达峰行动方案。 <span style="">2020/10/29</span></li>
+                        <li> 碳达峰中和工作领导小组第一次全体会议在北京召开，确保如期完成碳中和、碳达峰目标。 <span style="">2021/5/27</span></li>
+                        <li> 《中共中央国务院关于完整准确全面贯彻新发展理念做好碳达峰碳中和工作的意见》，提到2025、2030、2060三个目标。<span style="">2021/10/24</span></li>
+                        <li> 国家发展改革委、国家能源局发布《关于完善能源绿色低碳转型体制机制和政策措施的意见》 <span style="">2022/2/10</span></li>
+                        <li> 中华人民共和国教育部印发了《加强碳达峰碳中和高等教育人才培养体系建设工作方案》 <span style="">2022/5/7</span></li>
+                    </ul>
+                </div>
+                <script type="text/javascript">
+                    $("#scrollDiv").Scroll({
+                        line: 1,
+                        speed: 500,
+                        timer: 1500,
+                        up: "but_up",
+                        down: "but_down"
+                    });
+                </script>
+            </div>
+        </div>
+        <div class="fltdecarround fltdecarroundleft fltdecarroundtop"></div>
+        <div class="fltdecarround fltdecarroundtop fltdecarroundright "></div>
+        <div class="fltdecarround fltdecarroundleft fltdecarroundbottom"></div>
+        <div class="fltdecarround fltdecarroundbottom fltdecarroundright "></div>
+    </div>
+    <div class="fltoutbox rightbox">
+        <div style="height: 36px; padding-top: 25px;"><span class="analyzedatashowtitle">【能源转型投资(单位:亿美元)】</span></div>
+        <!--右上分析内容放置框-->
+        <div class="analyzemsgbgbox " style=" margin-right: 2px;padding-bottom: 29px">
+            <div style="background-color: #022542;opacity: 0.9;height: 130px">
+                <div style="padding: 10px 0 0 16px">
+                    <div class="l_left"><span style="color: #dfdede;font-size: 10px;margin-right: 10px">中国：</span>
+                    </div>
+                    <div class="progress l_left" id="vaderSize" style="width: 150px;padding: 0;margin-top: 6px;"></div>
+                    <script>
+                        var number = 30;
+                        $(function () {
+                            $("#vaderSize").ProgressBarWars({
+                                porcentaje: 35,
+                                estilo: "vader",
+                                tiempo: 5980,
+                                alto: "8px",
+                                flag: true
+                            });
+                            
+                        });
+                    </script>
+                    <div class="l_left"><span style="color: #dd9809;margin-left: 4px;font-size: 10px">2660</span></div>
+                    <div class="clear"></div>
+                </div>
+                <div style="padding: 8px 0 0 16px">
+                    <div class="l_left"><span style="color: #dfdede;font-size: 10px;margin-right: 10px">美国：</span>
+                    </div>
+                    <div class="progress l_left" id="vaderSize1" style="width: 150px;margin-top: 6px;"></div>
+                    <script>
+                        $(function () {
+                            $("#vaderSize1").ProgressBarWars1({
+                                porcentaje: 15,
+                                estilo: "vader1",
+                                tiempo: 5980,
+                                alto: "8px",
+                                flag: true
+                            });
+                        
+                        });
+                    </script>
+                    <div class="l_left"><span style="color: #00d8ff;margin-left: 4px;font-size: 10px">1140</span></div>
+                    <div class="clear"></div>
+                </div>
+                <div style="padding: 8px 0 0 16px">
+                    <div class="l_left"><span style="color: #dfdede;font-size: 10px;margin-right: 10px">德国：</span>
+                    </div>
+                    <div class="progress l_left" id="vaderSize2" style="width: 150px;margin-top: 6px;"></div>
+                    <script>
+                        $(function () {
+                            $("#vaderSize2").ProgressBarWars2({
+                                porcentaje: 6,
+                                estilo: "vader2",
+                                tiempo: 5980,
+                                alto: "8px",
+                                flag: true
+                            });
+                            
+                        });
+                    </script>
+                    <div class="l_left"><span style="color: #56a4ff;margin-left: 4px;font-size: 10px">470</span></div>
+                    <div class="clear"></div>
+                </div>
+                <div style="padding: 8px 0 0 16px">
+                    <div class="l_left"><span style="color: #dfdede;font-size: 10px;margin-right: 10px">其他：</span>
+                    </div>
+                    <div class="progress l_left" id="vaderSize3" style="width: 150px;margin-top: 6px;"></div>
+                    <script>
+                        $(function () {
+                            $("#vaderSize3").ProgressBarWars3({
+                                porcentaje: 44,
+                                estilo: "vader3",
+                                tiempo: 5980,
+                                alto: "8px",
+                                flag: true
+                            });
+                            
+                        });
+                    </script>
+                    <div class="l_left"><span style="color: #56ff6a;margin-left: 4px;font-size: 10px">4280</span></div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div>
+                <p style="color: #dfdede;font-size: 14px;margin: 22px 0 0 17px ">【部分清洁能源技术的全球制造能力】</p>
+                <p style="color: #dfdede;font-size: 12px;margin: 12px 17px 0 17px">2020 年，中国占全球太阳能光伏模块和电池制造能力的 70%左右，占全球热泵制造能力的 40%以上。中国企业在 2020 年还制造了全球约 65%的太阳
+                    能光伏模块（产能超过 100 吉瓦）、近 80%的光伏电池，以及超过 95%的硅晶片
+                    （IEA PVPS, 2020；CPIA, 2021）。</p>
+                
+            </div>
+            <div class="fltdecarround fltdecarroundleft fltdecarroundbottom"></div>
+            <div class="fltdecarround fltdecarroundbottom fltdecarroundright "></div>
+        </div>
+        <!--右下分析内容放置框-->
+        <div class="analyzemsgbgbox" style="margin-top: 20px; height: 350px;">
+            <span class="analyzedatashowtitle">【2020年能源行业固定资产投资】</span>
+            <span  style="font-size:12px; color:#fff;margin-left: 16px;line-height: 44px;">数据来源：中国能源大数据报告（2022）</span>
+            <div style="margin: 0 6px;background-color: #011c2f;opacity: 0.8;padding:8px 0 6px 0">
+                <div>
+                    <div><span class="down_span">【煤炭采选业】</span><span
+                            style="color:#dfdede;font-size: 10px;margin-left: 118px; font-weight: lighter;">3609亿元</span>
+                    </div>
+                    <div style="margin: 5px 0 4px 12px;">
+                        <div class="progress l_left" id="vaderSize5" style="width: 190px;padding: 0;margin-top: 4px">
+                        </div>
+                        <script>
+                            $("#vaderSize5").ProgressBarWars5({
+                                porcentaje: 18.82,
+                                estilo: "vader5",
+                                tiempo: 5980,
+                                alto: "8px",
+                                flag: true
+                            });
+                        </script>
+                        <div><span class=" l_left" style="margin-left: 12px;color:#40e315;font-size: 12px ">18.28%</span>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div><span class="down_span">【石油和天然气开采业】</span><span
+                            style="color:#dfdede;font-size: 10px;margin-left: 73px; font-weight: lighter;">2327亿元</span>
+                    </div>
+                    <div style="margin: 5px 0 4px 12px;">
+                        <div class="progress l_left" id="vaderSize6" style="width: 190px;padding: 0;margin-top: 4px">
+                        </div>
+                        <script>
+                            $("#vaderSize6").ProgressBarWars6({
+                                porcentaje: 11.78,
+                                estilo: "vader6",
+                                tiempo: 5980,
+                                alto: "8px",
+                                flag: true
+                            });
+                        </script>
+                        <div><span class="l_left" style="margin-left: 12px;color:#15e3ac;font-size: 12px ">11.78%</span>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div><span class="down_span">【石油加工及炼焦业】</span><span
+                            style="color:#dfdede;font-size: 10px;margin-left: 85px; font-weight: lighter;">1235亿元</span>
+                    </div>
+                    <div style="margin: 5px 0 4px 12px;">
+                        <div class="progress l_left" id="vaderSize7" style="width: 190px;padding: 0;margin-top: 4px">
+                        </div>
+                        <script>
+                            $("#vaderSize7").ProgressBarWars7({
+                                porcentaje: 18.35,
+                                estilo: "vader7",
+                                tiempo: 5980,
+                                alto: "8px",
+                                flag: true
+                            });
+                        </script>
+                        <div><span class="down_span l_left"
+                                style="margin-left: 12px;color:#1f9cff ;font-size: 12px">18.35%</span></div>
+                        <div class="clear"></div>
+                    </div>
+                    <div><span class="down_span">【电源投资】</span><span
+                            style="color:#dfdede;font-size: 10px;margin-left: 133px; font-weight: lighter;">5292亿元</span>
+                    </div>
+                    <div style="margin: 5px 0 4px 12px;">
+                        <div class="progress l_left" id="vaderSize8" style="width: 190px;padding: 0;margin-top: 4px">
+                        </div>
+                        <script>
+                            $("#vaderSize8").ProgressBarWars8({
+                                porcentaje: 26.80,
+                                estilo: "vader8",
+                                tiempo: 5980,
+                                alto: "8px",
+                                flag: true
+                            });
+                        </script>
+                        <div><span class="down_span l_left"
+                                style="margin-left: 12px;color:#c97802;font-size: 12px ">26.80%</span></div>
+                        <div class="clear"></div>
+                    </div>
+                   
+                    <div><span class="down_span">【电网投资】</span><span
+                            style="color:#dfdede;font-size: 10px;margin-left: 133px; font-weight: lighter;">4896亿元</span>
+                    </div>
+                    <div style="margin: 5px 0 4px 12px;">
+                        <div class="progress l_left" id="vaderSize10" style="width: 190px;padding: 0;margin-top: 4px">
+                        </div>
+                        <script>
+                            $("#vaderSize10").ProgressBarWars10({
+                                porcentaje: 24.79,
+                                estilo: "vader10",
+                                tiempo: 5980,
+                                alto: "8px",
+                                flag: true
+                            });
+                        </script>
+                        <div><span class=" l_left" style="margin-left: 12px;color:#ef4503;font-size: 12px ">24.79%</span>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="fltdecarround fltdecarroundleft fltdecarroundtop"></div>
+            <div class="fltdecarround fltdecarroundtop fltdecarroundright "></div>
+            <div class="fltdecarround fltdecarroundleft fltdecarroundbottom"></div>
+            <div class="fltdecarround fltdecarroundbottom fltdecarroundright "></div>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function () {
+            var loading = document.getElementById("loading");
+            loading.style.display = "none";
+        }
+    </script>
+    <script>
+        var salesMyChart = echarts.init($("#container1")[0]);
+        option = {
+            tooltip: {
+                confine: true,
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c}艾焦({d}%)"
+            },
+            // visualMap: {
+            //     show: false,
+            //     min: 1.43,
+            //     max: 8.94,
+               
+            // },
+            color:['#62d1de','#54d6b6','#a6db69','#ffd454'],
+            series: [{
+                name: '可再生能源量',
+                type: 'pie',
+                radius: ["25%","55%"],
+                center: ['50%', '50%'],
+                data: [{
+                    value: 7.79,
+                    name: '中国',
+                    // color: "green",
+                }, {
+                    value: 6.15,
+                    name: '美国'
+                }, {
+                    value: 8.94,
+                    name: '欧洲'
+                }, {
+                    value: 8.83,
+                    name: '其他'
+                }],
+                roseType: 'radius',
+                label: {
+                    normal: {
+                        textStyle: {
+                            color: 'rgba(255, 255, 255, 0.5)'
+                        }
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        lineStyle: {
+                            color: 'rgba(255, 255, 255, 0.3)'
+                        },
+                        smooth: 0.2,
+                        length: 10,
+                        length2: 20
+                    }
+                },
+               
+                animationType: 'scale',
+                animationEasing: 'elasticOut',
+                animationDelay: function (idx) {
+                    return Math.random() * 200;
+                }
+            }]
+        };
+        salesMyChart.setOption(option);
+    </script>
+</body>
+
+</html>
